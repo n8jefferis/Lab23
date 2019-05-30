@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Lab23.Models.Item>
+
+@{ 
+    ViewBag.Title = "Shop";
+
+    
+}
+
+        <table class="table" name="Items">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.id)
+                </th>
+                <th>
+                    <p>Product Name: </p>@Html.DisplayNameFor(Model => Model.ProductName)
+                </th>
+                <th>
+                    <p>Price: </p>@Html.DisplayNameFor(Model => Model.Price)
+                </th>
+                <th>
+                    <p>Quantity: </p>@Html.DisplayNameFor(Model => Model.Quantity)
+                </th>
+                <th>
+                    <p>Description: </p>@Html.DisplayNameFor(Model => Model.Description)
+                </th>
+            </tr>
+            <tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(Model => item.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(Model => item.Quantity)
+                        </td>
+                        <td>
+                            <form action="~/Home/Buy" method="post">
+                                <input style="display:none;" name="Id" value="@item.id" />
+                                <input type="submit" value="Buy"/>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tr>
+        </table>
