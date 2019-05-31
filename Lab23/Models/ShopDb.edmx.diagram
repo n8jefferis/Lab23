@@ -7,6 +7,14 @@
       <Diagram DiagramId="bab68a366a5b4c66aa5dedea4e20babb" Name="Diagram1">
         <EntityTypeShape EntityType="masterModel.Item" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="masterModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.UserItem" Width="1.5" PointX="3.375" PointY="2.25" />
+        <EntityTypeShape EntityType="masterModel.MSreplication_options" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_db" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_dev" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_usg" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="masterModel.spt_monitor" Width="1.5" PointX="7.75" PointY="0.75" />
+        <AssociationConnector Association="masterModel.FK__UserItems__UserI__4BCC3ABA" />
+        <AssociationConnector Association="masterModel.FK__UserItems__ItemI__4CC05EF3" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

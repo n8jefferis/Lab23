@@ -27,5 +27,11 @@ namespace Lab23.Models
     
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserItem> UserItems { get; set; }
+        public virtual DbSet<MSreplication_options> MSreplication_options { get; set; }
+        public virtual DbSet<spt_fallback_db> spt_fallback_db { get; set; }
+        public virtual DbSet<spt_fallback_dev> spt_fallback_dev { get; set; }
+        public virtual DbSet<spt_fallback_usg> spt_fallback_usg { get; set; }
+        public virtual DbSet<spt_monitor> spt_monitor { get; set; }
     }
 }

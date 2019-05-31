@@ -129,10 +129,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserItemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Item.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSreplication_options.cs">
       <DependentUpon>ShopDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ShopDb.Context.cs">
@@ -150,7 +154,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\spt_fallback_db.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spt_fallback_dev.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spt_fallback_usg.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spt_monitor.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
+      <DependentUpon>ShopDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserItem.cs">
       <DependentUpon>ShopDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserItems\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

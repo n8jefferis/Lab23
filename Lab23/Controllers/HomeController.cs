@@ -23,7 +23,7 @@ namespace Lab23.Controllers
             User u = (User)Session["LoggedInUser"];
 
             ViewBag.User = u.UserName;
-            ViewBag.Password = u.Password;
+             ViewBag.Password = u.Password;
 
             return View();
         }
@@ -100,19 +100,28 @@ namespace Lab23.Controllers
             if (Session["LoggedInUser"] != null)
             {
                 Item purchase = db.Items.Find(id);
-                User buyer = (User) Session["LoggedInUser"];
-                if(buyer.Money < purchase.Price)
+                if (Session["LoggedInUser"] != null)
                 {
-                    Session["Error"] = $"{buyer.UserName} cannot afford {purchase.ProductName} at {purchase.Price}";
+                    User buyer = (User)Session["LoggedInUser"];
+                    if (buyer.Money < purchase.Price)
+                    {
+                        Session["Error"] = $"{buyer.UserName} cannot afford {purchase.ProductName} at {purchase.Price}";
+                    }
+                    else
+                    {
+                        buyer.Money -= purchase.Price;
+                        purchase.Quantity--;
+                        db.Users.AddOrUpdate(buyer);
+                        db.Items.AddOrUpdate(purchase);
+                        db.SaveChanges();
+                    }
                 }
                 else
                 {
-                    buyer.Money -= purchase.Price;
-                    db.Users.AddOrUpdate(buyer);
-                    db.SaveChanges();
+                    //Add Session  Error saying you need to log in 
+                    return RedirectToAction("Login");
                 }
             }
-
             return RedirectToAction("Error");
             
         }
